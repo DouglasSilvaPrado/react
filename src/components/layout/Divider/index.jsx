@@ -1,3 +1,7 @@
+import Input from "../../form/Input";
+
+import { Link } from 'react-router-dom';
+
 function Divider() {
     return ( 
         <>
@@ -13,24 +17,16 @@ function Divider() {
                     </h3>
                     <form name="frmContato" action="insert">
                         <div className="form-group">
-                        <input
-                            type="text"
-                            name="origem"
-                            className="form-control my-3"
-                            placeholder="De Onde"
-                            required=""
-                        />
-                        <input
-                            type="text"
-                            name="destino"
-                            className="form-control my-3"
-                            placeholder="Para Onde"
-                            required=""
-                        />
-                        <input type="date" name="data_ida" className="form-control my-3" required="" />
-                        <input type="date" name="data_volta" className="form-control my-3" required=""/>
-                        <input type="button" className="btn btn-primary my-3 form-control" value="Agendar" onclick="validar()"/>
-                        <a href="Destino.html"><input type="button" className="btn btn-primary my-3 form-control" value="Melhores Destino"/></a>
+                            <Input type="text" name="origem" className="form-control my-3" placeholder="De Onde" />
+                            <Input type="text" name="destino" className="form-control my-3" placeholder="Para Onde" />
+                            <Input type="date" name="data_ida" className="form-control my-3"/>
+                            <Input type="date" name="data_volta" className="form-control my-3"/>
+                            <Link to="viagens">
+                                <Input type="button" className="btn btn-primary my-3 form-control" value="Agendar" click="validar()"/>   
+                            </Link>
+                            <Link to="/Destino" >
+                                <Input type="button" className="btn btn-primary my-3 form-control" value="Melhores Destino"/>
+                            </Link>
                         </div>
                     </form>
                     </div>
@@ -47,5 +43,6 @@ function Divider() {
         </>
      );
 }
+
 
 export default Divider;

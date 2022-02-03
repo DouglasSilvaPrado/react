@@ -1,19 +1,18 @@
 function validar(){
-	let o = frmContato.origem.value
-	let d = frmContato.destino.value
-	
-	if(o === ""){
-		alert('prencha o campo origem')
-		o.focus()
-		frmContato.origem.focus()
-		return false
-	}else if(d === ""){
-		alert('prencha o campo destino')
-		frmContato.destino.focus()
-		return false
-	}else{
-		document.forms["frmContato"].submit()
-	}
+    let o = document.getElementById("#origem").value
+    let d = document.getElementById("#destino").value
+    
+    if(o === ""){
+        alert('prencha o campo origem')
+        o.focus()
+        return false
+    }else if(d === ""){
+        alert('prencha o campo destino')
+        d.focus()
+        return false
+    }else{
+        document.forms["frmContato"].submit()
+    }
 }
 
 function validar2(){
